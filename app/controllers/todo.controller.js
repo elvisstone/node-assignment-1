@@ -5,7 +5,6 @@ const Todo = require('../models/todo.model')
 module.exports = {
     list: async (req, res) => {
 
-        // const data = await Todo.findAll()
         const data = await Todo.findAndCountAll()
     
         res.status(200).send({

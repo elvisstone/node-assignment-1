@@ -1,6 +1,6 @@
 "use strict";
 
-const {Sequelize, DataTypes} = require("sequelize")
+const {Sequelize, DataTypes} = require("sequelize");
 
 const sequelize = new Sequelize('sqlite:' + (process.env.SQLITE || './db.sqlite3'))
 
@@ -36,6 +36,8 @@ const Todo = sequelize.define("todos", {
         allowNull:false
     }
 })
+
+// sequelize.sync()
 
 sequelize.authenticate()
     .then(() => console.log('* DB Connected *'))
